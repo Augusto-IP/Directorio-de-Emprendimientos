@@ -1,0 +1,950 @@
+/* ============================================================
+   DETALLE DE NEGOCIO — Portada dedicada
+   ============================================================ */
+
+body {
+  background: var(--bg);
+  color: var(--texto);
+}
+
+/* ============================================================
+   NAVEGACIÓN SUPERIOR
+   ============================================================ */
+.detalle-nav {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 22px 24px 0;
+}
+
+.btn-volver {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radio-pill);
+  transition: all 0.22s ease;
+}
+
+.btn-volver:hover {
+  color: var(--texto);
+  border-color: var(--violeta-claro);
+  background: rgba(124, 92, 252, 0.12);
+  transform: translateX(-3px);
+}
+
+.btn-volver svg {
+  transition: transform 0.22s ease;
+}
+
+.btn-volver:hover svg {
+  transform: translateX(-2px);
+}
+
+/* ============================================================
+   PORTADA DEL NEGOCIO
+   ============================================================ */
+.detalle-portada {
+  position: relative;
+  margin-top: 18px;
+  padding: 64px 24px 72px;
+  overflow: hidden;
+  text-align: center;
+  background:
+    radial-gradient(720px 420px at 15% -10%, rgba(124, 92, 252, 0.35), transparent 60%),
+    radial-gradient(600px 380px at 100% 0%, rgba(37, 211, 102, 0.16), transparent 55%),
+    radial-gradient(900px 500px at 50% 120%, rgba(76, 58, 209, 0.3), transparent 60%),
+    var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.detalle-particulas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.detalle-particula {
+  position: absolute;
+  background: rgba(167, 139, 250, 0.55);
+  border-radius: 50%;
+  animation: flotar-particula linear infinite;
+  opacity: 0;
+}
+
+.detalle-portada__contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  animation: aparecer-gradual 0.6s ease both;
+}
+
+.detalle-logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.detalle-logo {
+  width: 112px;
+  height: 112px;
+  object-fit: cover;
+  border-radius: 28px;
+  background: var(--surface-2);
+  border: 3px solid rgba(167, 139, 250, 0.5);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5), 0 0 0 8px rgba(124, 92, 252, 0.08);
+  transition: transform 0.35s ease;
+}
+
+.detalle-logo:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+.detalle-logo-texto {
+  display: grid;
+  place-items: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 2.4rem;
+  color: var(--violeta-claro);
+  background: linear-gradient(135deg, #221b42, var(--surface-2));
+}
+
+.detalle-eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--violeta-claro);
+}
+
+.detalle-portada h1 {
+  margin: 0 0 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 4.5vw, 2.9rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.detalle-categoria {
+  display: inline-block;
+  padding: 7px 18px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--violeta-claro);
+  background: rgba(124, 92, 252, 0.15);
+  border: 1px solid rgba(167, 139, 250, 0.35);
+  border-radius: var(--radio-pill);
+  margin-bottom: 20px;
+}
+
+.detalle-descripcion {
+  max-width: 560px;
+  margin: 0 auto;
+  color: var(--texto-suave);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   CONTENIDO PRINCIPAL
+   ============================================================ */
+.detalle-contenido {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 48px 24px 72px;
+}
+
+/* --- Tarjeta de contacto --- */
+.detalle-contacto {
+  padding: 28px;
+  margin-bottom: 44px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-card);
+  animation: aparecer-gradual 0.5s ease 0.1s both;
+}
+
+.detalle-contacto h2 {
+  margin: 0 0 20px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.detalle-acciones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+.accion-contacto {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: 12px;
+  padding: 16px;
+  text-decoration: none;
+  color: var(--texto);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radio-md);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.accion-contacto svg {
+  grid-row: 1 / span 2;
+  color: var(--violeta-claro);
+}
+
+.accion-contacto small {
+  color: var(--texto-tenue);
+  font-size: 0.8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+a.accion-contacto:hover {
+  transform: translateY(-3px);
+  border-color: var(--violeta);
+  box-shadow: var(--sombra-glow);
+}
+
+.accion-wsp {
+  background: rgba(37, 211, 102, 0.12);
+  border-color: rgba(37, 211, 102, 0.35);
+}
+
+.accion-wsp svg {
+  color: var(--verde);
+}
+
+a.accion-wsp:hover {
+  border-color: var(--verde);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.35);
+}
+
+.accion-ubicacion {
+  background: var(--surface-2);
+}
+
+/* ============================================================
+   SERVICIOS DEL NEGOCIO
+   ============================================================ */
+.detalle-seccion-titulo {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.detalle-seccion-titulo h2 {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.detalle-contador {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--texto);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 7px 16px;
+  border-radius: var(--radio-pill);
+}
+
+.detalle-servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 20px;
+}
+
+.detalle-servicio {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radio-md);
+  box-shadow: var(--sombra-card);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  animation: aparecer-gradual 0.45s ease both;
+  animation-delay: calc(var(--i, 0) * 0.06s);
+}
+
+.detalle-servicio:hover {
+  transform: translateY(-4px);
+  border-color: rgba(167, 139, 250, 0.45);
+  box-shadow: var(--sombra-card), var(--sombra-glow);
+}
+
+.detalle-servicio__img {
+  margin: -20px -20px 0;
+  height: 150px;
+  overflow: hidden;
+  border-radius: var(--radio-md) var(--radio-md) 0 0;
+  background: var(--surface-alt, #0e1020);
+}
+
+.detalle-servicio__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.detalle-servicio__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.detalle-servicio__categoria {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #9dccff;
+  padding: 5px 11px;
+  background: rgba(30, 96, 160, 0.5);
+  border: 1px solid rgba(77, 156, 227, 0.4);
+  border-radius: var(--radio-pill);
+}
+
+.detalle-servicio__estado {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radio-pill);
+}
+
+.detalle-servicio__estado.ok {
+  color: #6df04b;
+  background: rgba(20, 92, 31, 0.6);
+  border: 1px solid rgba(57, 185, 62, 0.4);
+}
+
+.detalle-servicio__estado.pausa {
+  color: #ff8888;
+  background: rgba(105, 38, 47, 0.6);
+  border: 1px solid rgba(208, 100, 109, 0.4);
+}
+
+.detalle-servicio h3 {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.detalle-servicio p {
+  margin: 0;
+  color: var(--texto-suave);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.detalle-servicio__footer {
+  margin-top: auto;
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.detalle-servicio__precio {
+  display: grid;
+  gap: 2px;
+}
+
+.detalle-servicio__precio small {
+  color: var(--texto-tenue);
+  font-size: 0.72rem;
+}
+
+.detalle-servicio__precio strong {
+  font-size: 1.1rem;
+  color: var(--verde);
+}
+
+.detalle-servicio__duracion {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: auto;
+  font-size: 0.78rem;
+  color: var(--texto-tenue);
+}
+
+.detalle-servicio__wsp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #06210f;
+  background: linear-gradient(135deg, #34e07a, var(--verde) 55%, var(--verde-oscuro));
+  border-radius: var(--radio-pill);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.detalle-servicio__wsp:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: var(--sombra-glow-verde);
+}
+
+/* ============================================================
+   GALERÍA DE FOTOS
+   ============================================================ */
+.detalle-galeria {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radio-xlg);
+  padding: 26px;
+  box-shadow: var(--sombra-card);
+}
+
+.detalle-galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.detalle-galeria-item {
+  margin: 0;
+  border-radius: var(--radio-md);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  cursor: zoom-in;
+  border: 1px solid var(--border-strong);
+  background: #12101e;
+}
+
+.detalle-galeria-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.detalle-galeria-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Lightbox */
+.detalle-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  background: rgba(4, 3, 10, 0.92);
+  backdrop-filter: blur(6px);
+}
+
+.detalle-lightbox.abierto {
+  display: flex;
+}
+
+.detalle-lightbox img {
+  max-width: min(96vw, 980px);
+  max-height: 90vh;
+  border-radius: var(--radio-md);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.detalle-lightbox__cerrar {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.detalle-lightbox__cerrar:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* ============================================================
+   ESTADO NO ENCONTRADO
+   ============================================================ */
+.detalle.no-encontrado {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.no-encontrado-icono {
+  display: grid;
+  width: 120px;
+  height: 120px;
+  place-items: center;
+  color: var(--violeta-claro);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.detalle.no-encontrado h1 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.6rem;
+}
+
+.detalle.no-encontrado p {
+  color: var(--texto-suave);
+  margin: 0 0 12px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 720px) {
+  .detalle-portada {
+    padding: 48px 18px 56px;
+  }
+
+  .detalle-logo {
+    width: 92px;
+    height: 92px;
+    border-radius: 24px;
+  }
+
+  .detalle-contenido {
+    padding: 32px 16px 56px;
+  }
+
+  .detalle-acciones {
+    grid-template-columns: 1fr;
+  }
+
+  .detalle-servicios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detalle-galeria-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .detalle-galeria {
+    padding: 18px;
+  }
+
+  .detalle-resenas__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detalle-form-reserva {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   RATING EN LA PORTADA
+   ============================================================ */
+.detalle-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 14px auto 0;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+  background: rgba(124, 92, 252, 0.12);
+  border: 1px solid rgba(124, 92, 252, 0.28);
+  border-radius: var(--radio-pill);
+}
+
+.detalle-rating__estrellas {
+  color: #fbbf24;
+  letter-spacing: 2px;
+}
+
+.detalle-rating--grande {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   HORARIO DE ATENCIÓN
+   ============================================================ */
+.detalle-horario {
+  padding: 28px;
+  margin-bottom: 44px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-card);
+}
+
+.detalle-horario__lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.detalle-horario__dia {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 4px 10px;
+  align-items: center;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.detalle-horario__nombre {
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.detalle-horario__hora {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.detalle-horario__badge {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 3px 9px;
+  border-radius: var(--radio-pill);
+}
+
+.detalle-horario__dia.abierto .detalle-horario__badge {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.12);
+}
+
+.detalle-horario__dia.cerrado .detalle-horario__badge {
+  color: var(--texto-suave);
+  background: rgba(148, 163, 184, 0.12);
+}
+
+@media (max-width: 620px) {
+  .detalle-horario__lista {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   RESERVA TU CITA
+   ============================================================ */
+.detalle-reserva {
+  padding: 28px;
+  margin-bottom: 44px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-card);
+}
+
+.detalle-reserva__sub {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+.detalle-seccion-titulo {
+  margin-bottom: 24px;
+}
+
+.detalle-seccion-titulo h2 {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* Alertas de resultado */
+.detalle-alerta {
+  padding: 13px 18px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.detalle-alerta--exito {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.detalle-alerta--error {
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Formulario */
+.detalle-form-reserva {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.campo-reserva {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.campo-reserva--largo {
+  grid-column: 1 / -1;
+}
+
+.campo-reserva label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+.campo-reserva input,
+.campo-reserva select,
+.campo-reserva textarea {
+  padding: 11px 14px;
+  font-size: 0.92rem;
+  color: var(--texto);
+  font-family: inherit;
+  background: var(--bg);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.campo-reserva input:focus,
+.campo-reserva select:focus,
+.campo-reserva textarea:focus {
+  border-color: var(--violeta-claro);
+  box-shadow: 0 0 0 3px rgba(124, 92, 252, 0.16);
+}
+
+.campo-reserva textarea {
+  resize: vertical;
+}
+
+.detalle-btn-reservar {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px 20px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  font-family: inherit;
+  color: #fff;
+  background: linear-gradient(135deg, #7c3aed, #5b21b6);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.detalle-btn-reservar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.5);
+  filter: brightness(1.06);
+}
+
+/* Botón de reserva por WhatsApp (verde oficial) */
+.detalle-btn-wsp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+  width: 100%;
+}
+
+.detalle-btn-wsp:hover {
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+}
+
+/* ============================================================
+   RESEÑAS
+   ============================================================ */
+.detalle-resenas {
+  padding: 28px;
+  margin-bottom: 44px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radio-lg);
+  box-shadow: var(--sombra-card);
+}
+
+.detalle-resenas__grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.detalle-form-resena {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 20px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.detalle-btn-resena {
+  padding: 12px 18px;
+  font-size: 0.92rem;
+}
+
+/* Estrellas de puntuación */
+.resena-estrellas {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.resena-estrellas input {
+  display: none;
+}
+
+.resena-estrellas label {
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+  color: #3d3a52;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.resena-estrellas label:hover,
+.resena-estrellas label:hover ~ label,
+.resena-estrellas label.activa {
+  color: #fbbf24;
+  transform: scale(1.06);
+}
+
+/* Lista de reseñas */
+.detalle-resenas__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.detalle-resenas__vacio {
+  margin: 0;
+  padding: 26px;
+  text-align: center;
+  color: var(--texto-suave);
+  border: 1px dashed var(--border-strong);
+  border-radius: 12px;
+}
+
+.resena-item {
+  padding: 16px 18px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.resena-item__top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.resena-item__avatar {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #7c3aed, #4c1d95);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.resena-item__top > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.resena-item__top strong {
+  font-size: 0.92rem;
+}
+
+.resena-item__estrellas {
+  font-size: 0.8rem;
+  color: #fbbf24;
+  letter-spacing: 1px;
+}
+
+.resena-item__fecha {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--texto-suave);
+  white-space: nowrap;
+}
+
+.resena-item__texto {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--texto-suave);
+}

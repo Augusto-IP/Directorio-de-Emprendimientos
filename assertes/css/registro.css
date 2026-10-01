@@ -1,0 +1,15 @@
+/* ==========================================================================
+   AJUSTES DEL FORMULARIO DE REGISTRO SOBRE LA BASE DEL LOGIN
+   ========================================================================== */
+
+.segunda-mitad-login {
+    overflow-y: auto;
+}
+
+.campo-grupo + .campo-grupo {
+    margin-top: 14px;
+}
+
+.btn-submit {
+    margin-top: 22px;
+}
