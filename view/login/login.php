@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </button>
                 </form>
 
-                <p class="register-text">¿No tienes cuenta? <a href="registro.php" class="registrar">Registrar gratis</a></p>
+                <p class="register-text">Acceso exclusivo para el administrador de AgendaPro.</p>
             </div>
         </section>
     </main>
